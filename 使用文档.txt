@@ -1,0 +1,23 @@
+tsc .\文件名(可接多个 空格分隔)
+tsc .\文件名 --target ES版本 --module commenjs/ES6 模块化方式
+tsc .\文件名 编译时会附带编译已引用的ts相关文件
+        例： 在tsc.ts中引入了m1.ts 则在编译时会同时将m1.ts进行编译 
+
+
+配置文件(tsconfig.json)
+    1. 包括哪些文件:
+    所有在项目目录（包含 tsconfig.json 的目录）及其所有子目录中的 .ts 和 .tsx 文件都
+    会被包括在编译上下文中。
+    .d.ts 文件也会被自动包括，用于获取类型信息。
+        2. 排除哪些文件/目录:
+    文件和目录名以 . 开头的会被默认忽略。
+    node_modules 、 bower_components 、 jspm_packages 目录会被默认忽略。
+    如果 outDir 选项在 tsconfig.json 中被指定，那么它所指定的输出目录也会被排除。
+    你也可以使用 exclude 选项来明确指定要排除的文件或目录。但如果你没有指定 exclude ，
+    上述的默认排除规则会生效。
+
+        "outDir": "./dist",      此选项用来指定将编译好的ts文件输入至指定目录
+    与compilerOptions同级的配置选项
+        files 是一个字符串数组，其中每个字符串都是一个文件的相对或绝对路径。files 选项不支持文件模式匹配或通配符。
+
+        noEmitOnError": true,  有类型错误时，不生成JS文件

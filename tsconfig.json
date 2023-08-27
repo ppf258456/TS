@@ -1,0 +1,11 @@
+{
+    "extends":"./tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "target": "ESNext",
+        "noEmitOnError": true /* 有类型错误时，不生产JS文件 */,
+        "noImplicitAny": true /* 是否对函数中隐式的any类型报错，建议开启 */,
+        "strictPropertyInitialization":true,/* 创建类市必须要有构造器 */
+        // "strictNullChecks":false, //严格的空值检查
+    }
+}
